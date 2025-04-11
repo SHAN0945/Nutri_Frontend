@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="healthTracker">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - NutriTrack</title>
+
+    <!-- Load AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Load jQuery Validation Plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- Load app.js -->
+    <script src="app.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="signup.css">
+
+    <style>
+        .invalid-feedback {
+            color: red;
+            font-size: small;
+            margin-top: 5px;
+        }
+        .is-invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+<body ng-controller="AuthController">
+    <div class="signup-container">
+        <h2>Create Account</h2>
+        <form id="signupForm" ng-submit="signup($event)">
+            <!-- Username -->
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" ng-model="signupData.username">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" ng-model="signupData.email">
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" ng-model="signupData.password">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Redirect to Login -->
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+    </div>
+</body>
+</html>

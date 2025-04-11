@@ -1,0 +1,368 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', system-ui;
+    
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Pricing Cards */
+.pricing-card {
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+.pricing-card.premium {
+    border-color: #4CAF50;
+    transform: scale(1.05);
+}
+.price span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #4CAF50;
+    min-height: 100vh;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h2 {
+    color: white;
+    font-weight: 300;
+}
+
+.sidebar .nav-item {
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 0;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: #4CAF50;
+    background-color: white;
+    font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+}
+
+/* Dashboard Health Profile */
+.profile-card {
+    transition: all 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bars */
+.progress {
+    height: 25px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    line-height: 25px;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    transition: width 0.6s ease;
+}
+
+/* Water Circle Progress (Hydration Page) */
+.water-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* Bar Chart (Hydration Page) */
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    justify-content: space-between;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+}
+
+.bar-wrapper {
+    height: 150px;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    background-color: #0dcaf0;
+    position: absolute;
+    bottom: 0;
+}
+
+.bar-label, .bar-value {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Calendar (Calendar Page) */
+.calendar {
+    width: 100%;
+}
+
+.calendar-header, .calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.calendar-date {
+    height: 60px;
+    border: 1px solid #dee2e6;
+    padding: 5px;
+    position: relative;
+}
+
+.date-number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.date-indicators {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 3px;
+    background-color: #dee2e6;
+}
+
+.indicator.met {
+    background-color: #28a745;
+}
+
+.empty {
+    background-color: #f5f5f5;
+}
+
+.today {
+    background-color: #e8f4f8;
+    font-weight: bold;
+}
+
+.goal-met {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+.goal-partial {
+    background-color: rgba(255, 193, 7, 0.2);
+}
+
+.goal-missed {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.streak-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.streak-number {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.streak-label {
+    font-size: 14px;
+}
+/* 🔁 Smooth transitions */
+.calendar-date {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.calendar-date:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* 🎯 Highlight today */
+.today {
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
+    position: relative;
+}
+
+/* 📱 Responsive tweaks */
+@media (max-width: 768px) {
+    .calendar-day {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .calendar-date {
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .calendar-week {
+        grid-template-columns: repeat(7, minmax(40px, 1fr));
+    }
+
+    .date-number {
+        font-size: 12px;
+    }
+
+    .calendar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .calendar-header,
+    .calendar-week {
+        min-width: 500px;
+    }
+}
+
+/* Food Entry Page */
+.meal-items {
+    min-height: 100px;
+}
+
+.food-entry {
+    padding: 10px 0;
+}
+
+/* Appointment Page */
+.doctor-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        position: static;
+    }
+    
+    .calendar-date {
+        height: 40px;
+    }
+    
+    .date-indicators {
+        display: none;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+}
+
+
+/* footer landing page css */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-light);
+        font-size: 0.875rem;
+    }

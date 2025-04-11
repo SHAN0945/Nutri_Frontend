@@ -1,0 +1,158 @@
+pricing.css
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Section Styling */
+.pricing {
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffc107;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card Styling */
+.pricing-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  flex: 1 1 300px;
+  max-width: 360px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Headings */
+.card-body h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Pricing text */
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffc107;
+}
+
+.price span {
+  font-size: 2rem;
+}
+
+/* Features List */
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.list-unstyled li {
+  font-size: 1rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.list-unstyled li i {
+  margin-right: 10px;
+  color: #ffc107;
+}
+
+.list-unstyled li i.fa-times {
+  color: #dc3545;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+}
+
+.btn-outline-success {
+  background-color: transparent;
+  color: #ffc107;
+  border: 2px solid #ffc107;
+}
+
+.btn-success:hover,
+.btn-outline-success:hover {
+  background-color: #e0a800;
+  color: white;
+}
+
+/* Premium Plan Highlight */
+.premium {
+  border: 3px solid #ffc107;
+  background-color: #fff9e6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    max-width: 100%;
+  }
+}
