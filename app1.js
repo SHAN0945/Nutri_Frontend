@@ -10,7 +10,7 @@ angular.module('healthTracker', [])
         $window.location.href = "login.html";
         return;
     }
-    $http.get(`http://localhost:5000/api/user?userId=${userId}`)
+    $http.get(`https://nutri-backend-mocha.vercel.app//api/user?userId=${userId}`)
     .then(function(response) {
     console.log("User data loaded", response.data);
     if (response.data.profile) {
@@ -63,7 +63,7 @@ angular.module('healthTracker', [])
     //             $window.location.href = "login.html";
     //             return;
     //         }
-    //         $http.post('http://localhost:5000/api/water', 
+    //         $http.post('https://nutri-backend-mocha.vercel.app//api/water', 
     //                   { amount: amount , id:userId})  // Crucial for session cookies
     //             .then(function(response) {
     //                 // Update local data only after successful backend update
@@ -98,7 +98,7 @@ angular.module('healthTracker', [])
                 profile: $scope.profile // Include updated profile data
             };
 
-            $http.post('http://localhost:5000/api/water', payload)
+            $http.post('https://nutri-backend-mocha.vercel.app//api/water', payload)
                 .then(function(response) {
                     // Update local data only after successful backend update
                     $scope.currentWater += parseInt(amount);
@@ -457,7 +457,7 @@ angular.module('healthTracker', [])
             };
 
             // Update on backend
-            $http.post('http://localhost:5000/api/meals', payload)
+            $http.post('https://nutri-backend-mocha.vercel.app//api/meals', payload)
             .then(function(response) {
                 console.log("Meal added successfully", response.data);
             })
@@ -487,7 +487,7 @@ angular.module('healthTracker', [])
             $window.location.href = "login.html";
             return;
         }
-        $http.post('http://localhost:5000/api/meals/delete', {
+        $http.post('https://nutri-backend-mocha.vercel.app//api/meals/delete', {
             userId: userId,
             mealType: mealType,
             index: index
@@ -523,7 +523,7 @@ angular.module('healthTracker', [])
             $window.location.href = "login.html";
             return;
         }
-        $http.get(`http://localhost:5000/api/user?userId=${userId}`)
+        $http.get(`https://nutri-backend-mocha.vercel.app//api/user?userId=${userId}`)
             .then(function(response) {
             console.log("User data loaded", response.data);
             if (response.data.currentCalories) {
@@ -541,7 +541,7 @@ angular.module('healthTracker', [])
             console.error("Error loading user data", error);
             });
         // Load meals for today
-        $http.get('http://localhost:5000/api/user/meals/today')
+        $http.get('https://nutri-backend-mocha.vercel.app//api/user/meals/today')
             .then(function(response) {
                 if (response.data.meals) {
                     $scope.meals = response.data.meals;
@@ -662,7 +662,7 @@ angular.module('healthTracker', [])
             };
             
             // Update on backend
-            $http.post('http://localhost:5000/api/appointments', appointment)
+            $http.post('https://nutri-backend-mocha.vercel.app//api/appointments', appointment)
                 .then(function(response) {
                     console.log("Appointment scheduled successfully", response.data);
                 })
@@ -686,7 +686,7 @@ angular.module('healthTracker', [])
         $scope.appointments.splice(index, 1);
         
         // Update on backend
-        $http.post('http://localhost:5000/api/appointments/delete',{ id: appointment._id })
+        $http.post('https://nutri-backend-mocha.vercel.app//api/appointments/delete',{ id: appointment._id })
             .then(function(response) {
                 console.log("Appointment cancelled successfully", response.data);
             })
@@ -704,7 +704,7 @@ angular.module('healthTracker', [])
             return;
         }
         // Load appointments for today
-        $http.get(`http://localhost:5000/api/appointments?userId=${userId}`)
+        $http.get(`https://nutri-backend-mocha.vercel.app//api/appointments?userId=${userId}`)
             .then(function(response) {
                 if (response.data.appointments) {
                     $scope.appointments = response.data.appointments;

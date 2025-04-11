@@ -330,7 +330,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
             return;
         }
         const profileData = { ...$scope.profile, userId: userId };
-        $http.post('http://localhost:5000/api/user/profile', profileData)
+        $http.post('https://nutri-backend-mocha.vercel.app//api/user/profile', profileData)
             .then(function(response) {
             console.log("Profile saved successfully", response.data);
             })
@@ -386,7 +386,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
         };
         
         // Update water intake on backend
-        $http.post('http://localhost:5000/api/water', payload)
+        $http.post('https://nutri-backend-mocha.vercel.app//api/water', payload)
             .then(function(response) {
                 console.log("Water intake updated", response.data);
             })
@@ -403,7 +403,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
             $window.location.href = "login.html";
             return;
         }
-        $http.get(`http://localhost:5000/api/user?userId=${userId}`)
+        $http.get(`https://nutri-backend-mocha.vercel.app//api/user?userId=${userId}`)
             .then(function(response) {
             if (response.data.profile) {
                 $scope.profile = response.data.profile;
