@@ -29,7 +29,7 @@ var app=angular.module('healthTracker', [])
 //             return;
 //         }
 
-//         $http.post('http://127.0.0.1:5000/api/auth/login', $scope.loginData, { 
+//         $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { 
 //             withCredentials: true 
 //         }).then(function(response) {
 //             console.log(response.data);
@@ -60,7 +60,7 @@ var app=angular.module('healthTracker', [])
 //             return;
 //         }
 
-//         $http.post('http://127.0.0.1:5000/api/auth/signup', $scope.signupData, { 
+//         $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { 
 //             withCredentials: true 
 //         }).then(function(response) {
 //             localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -106,7 +106,7 @@ var app=angular.module('healthTracker', [])
 //             },
 //             submitHandler: function() {
 //                 // If form is valid, proceed with login
-//                 $http.post('http://127.0.0.1:5000/api/auth/login', $scope.loginData, { 
+//                 $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { 
 //                     withCredentials: true 
 //                 }).then(function(response) {
 //                     console.log(response.data);
@@ -157,7 +157,7 @@ var app=angular.module('healthTracker', [])
 //             },
 //             submitHandler: function() {
 //                 // If form is valid, proceed with signup
-//                 $http.post('http://127.0.0.1:5000/api/auth/signup', $scope.signupData, { 
+//                 $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { 
 //                     withCredentials: true 
 //                 }).then(function(response) {
 //                     localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -235,7 +235,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
         event.preventDefault();
         console.log("Login data:", $scope.loginData);
 
-        $http.post('http://127.0.0.1:5000/api/auth/login', $scope.loginData, { withCredentials: true })
+        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { withCredentials: true })
             .then(function(response) {
                 console.log("Login successful:", response.data);
                 localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -252,7 +252,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
         event.preventDefault();
         console.log("Signup data:", $scope.signupData);
 
-        $http.post('http://127.0.0.1:5000/api/auth/signup', $scope.signupData, { withCredentials: true })
+        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { withCredentials: true })
             .then(function(response) {
                 console.log("Signup successful:", response.data);
                 localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -268,7 +268,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
 
 app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
     // Verify authentication on page load
-    $http.get('http://127.0.0.1:5000/dashboard', { 
+    $http.get('https://nutri-backend-mocha.vercel.app/dashboard', { 
         withCredentials: true 
     }).then(function(response) {
         $scope.message = response.data.message;
@@ -430,7 +430,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
 
     // Logout functionality
     $scope.logout = function() {
-        $http.post('http://127.0.0.1:5000/api/auth/logout', {}, { 
+        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/logout', {}, { 
             withCredentials: true 
         }).then(function(response) {
             alert(response.data.message);
