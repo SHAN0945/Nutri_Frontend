@@ -29,7 +29,7 @@ var app=angular.module('healthTracker', [])
 //             return;
 //         }
 
-//         $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { 
+//         $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/login', $scope.loginData, { 
 //             withCredentials: true 
 //         }).then(function(response) {
 //             console.log(response.data);
@@ -60,7 +60,7 @@ var app=angular.module('healthTracker', [])
 //             return;
 //         }
 
-//         $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { 
+//         $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/signup', $scope.signupData, { 
 //             withCredentials: true 
 //         }).then(function(response) {
 //             localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -106,7 +106,7 @@ var app=angular.module('healthTracker', [])
 //             },
 //             submitHandler: function() {
 //                 // If form is valid, proceed with login
-//                 $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { 
+//                 $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/login', $scope.loginData, { 
 //                     withCredentials: true 
 //                 }).then(function(response) {
 //                     console.log(response.data);
@@ -157,7 +157,7 @@ var app=angular.module('healthTracker', [])
 //             },
 //             submitHandler: function() {
 //                 // If form is valid, proceed with signup
-//                 $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { 
+//                 $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/signup', $scope.signupData, { 
 //                     withCredentials: true 
 //                 }).then(function(response) {
 //                     localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -252,7 +252,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
         event.preventDefault();
         console.log("Signup data:", $scope.signupData);
 
-        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/signup', $scope.signupData, { withCredentials: true })
+        $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/signup', $scope.signupData, { withCredentials: true })
             .then(function(response) {
                 console.log("Signup successful:", response.data);
                 localStorage.setItem('userId', JSON.stringify(response.data.user.id));
@@ -268,7 +268,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
 
 app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
     // Verify authentication on page load
-    $http.get('https://nutri-backend-mocha.vercel.app/dashboard', { 
+    $http.get('https://nutri-backend-rmcw.onrender.com/dashboard', { 
         withCredentials: true 
     }).then(function(response) {
         $scope.message = response.data.message;
@@ -330,7 +330,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
             return;
         }
         const profileData = { ...$scope.profile, userId: userId };
-        $http.post('https://nutri-backend-mocha.vercel.app/api/user/profile', profileData)
+        $http.post('https://nutri-backend-rmcw.onrender.com/api/user/profile', profileData)
             .then(function(response) {
             console.log("Profile saved successfully", response.data);
             })
@@ -386,7 +386,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
         };
         
         // Update water intake on backend
-        $http.post('https://nutri-backend-mocha.vercel.app/api/water', payload)
+        $http.post('https://nutri-backend-rmcw.onrender.com/api/water', payload)
             .then(function(response) {
                 console.log("Water intake updated", response.data);
             })
@@ -403,7 +403,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
             $window.location.href = "login.html";
             return;
         }
-        $http.get(`https://nutri-backend-mocha.vercel.app/api/user?userId=${userId}`)
+        $http.get(`https://nutri-backend-rmcw.onrender.com/api/user?userId=${userId}`)
             .then(function(response) {
             if (response.data.profile) {
                 $scope.profile = response.data.profile;
@@ -430,7 +430,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', function($scope, 
 
     // Logout functionality
     $scope.logout = function() {
-        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/logout', {}, { 
+        $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/logout', {}, { 
             withCredentials: true 
         }).then(function(response) {
             alert(response.data.message);
