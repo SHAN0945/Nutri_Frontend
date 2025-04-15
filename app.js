@@ -235,7 +235,7 @@ app.controller('AuthController', ['$scope', '$http', '$window', function($scope,
         event.preventDefault();
         console.log("Login data:", $scope.loginData);
 
-        $http.post('https://nutri-backend-mocha.vercel.app/api/auth/login', $scope.loginData, { withCredentials: true })
+        $http.post('https://nutri-backend-rmcw.onrender.com/api/auth/login', $scope.loginData, { withCredentials: true })
             .then(function(response) {
                 console.log("Login successful:", response.data);
                 localStorage.setItem('userId', JSON.stringify(response.data.user.id));
